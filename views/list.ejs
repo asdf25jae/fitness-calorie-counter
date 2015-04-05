@@ -33,7 +33,8 @@ for(var i=0; i< foods.length; i++) { %>
 	<td><%= foods[i].carbs %></td>
 </tr>
 
-<% 
+<%
+//For calculating the totals
 calNumber = calNumber + foods[i].calories;
 protNumber = protNumber + foods[i].protein;
 fatNumber = fatNumber + foods[i].fat;
