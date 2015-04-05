@@ -1,0 +1,14 @@
+#title {
+	font-family: Raleway; 
+	color: white; 
+	background-color: black; 
+	padding:10px;
+}
+
+body {
+	background-image: url(/assets/images/fruit.jpg);
+}
+
+.container-fluid {
+	padding: 0px;
+}

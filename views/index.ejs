@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		
 		<!-- Latest BOOTSTRAP compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-
+		<!-- Regular stylesheet goes after to override-->
+		<link rel="stylesheet" href="css/styles.css">
+		<!-- Google Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 	</head>
 
-	<body style="background-image: url(assets/images/fruit.jpg);">
+	<body>
 
 	<div class="container-fluid">
 
+	<h1 id="title"><center>Fitness Calorie Counter</center></h1>
+
 	
-	<br><br>
+	<br>
 	<div class="row">
 
 	<div class="col-sm-4"></div>
@@ -51,6 +57,17 @@
 	</div>
 
 
+    <div class="col-sm-4"></div>
+    </div>
+
+    <br>
+
+    <div class="row">
+
+    <div class="col-sm-4"></div>
+
+    <div class="col-sm-4"><center>
+
 	<form class="navbar-form navbar-left" role="search" method="post" action="/search">
   	<div class="form-group">
     <input type="text" class="form-control" placeholder="Search" name="name">
@@ -60,18 +77,28 @@
 
 	</form>
 
-	<form action="/deleteAll" method="post" target="_blank">
-	<button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete All</button>
-	</form>
-
-
-
-	<br><br>
-    <a href="/food" class="btn btn-info" role="button">Show All</a>
-  
+	</center></div>
 
 	<div class="col-sm-4"></div>
-	</div>
+
+
+    </div>
+
+    <br>
+
+    <div class="row">
+    	<div class="col-sm-5"></div>
+    	<div class="col-sm-1"><center>
+    		<a href="/food" class="btn btn-info" role="button">Show All</a>
+    	</center></div>
+    	<div class="col-sm-1"><center>
+    		<form action="/deleteAll" method="post" target="_blank">
+			<button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete All</button>
+			</form>
+    	</center></div>
+    	<div class="col-sm-5"></div>
+    </div>
+
 	</div>
 
 
