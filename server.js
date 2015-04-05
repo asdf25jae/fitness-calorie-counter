@@ -9,6 +9,7 @@ var path = require('path');
 
 /*********************************************/
 
+
 //load food model in server.js
 var Food = require('./models/food');
 
@@ -19,6 +20,8 @@ mongoose.connect('mongodb://localhost:27017/caloriecounter');
 //create our express application
 var app = express();
 
+//set the view engine to ejs
+app.set('view engine', 'ejs');
 
 //to use POST or PUT with body-parser package
 app.use(bodyParser.urlencoded({
@@ -39,7 +42,12 @@ var router = express.Router();
 //initial route for testing
 router.get('/',function(req,res) {
 	//creating route for /
-	res.sendFile(path.join(__dirname + '/views/index.html'));
+	res.render('index');
+});
+
+router.get('/list',function(req,res) {
+	//creating route for /
+	res.render('list');
 });
 
 
@@ -76,14 +84,15 @@ foodRoute.post(function(req,res) {
 
 ////////////// READING ALL FOOD //////////////////
 
-// Create endpoint /api/beers for GET
+// Create endpoint /food for GET
 foodRoute.get(function(req, res) {
   // Use the food model to find all foods
   Food.find(function(err, foods) {
     if (err)
       res.send(err);
 
-    res.json(foods);
+  	//sent the foods object to list page
+    res.render('list', {foods: foods});
   });
 });
 

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Latest BOOTSTRAP compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	</head>
+
+<body>
+<table class="table">
+
+<tr>
+	<th>Name</th>
+	<th>Calories</th>
+	<th>Protein</th>
+	<th>Fat</th>
+	<th>Carbs</th>
+</tr>
+
+<% 
+
+var calNumber = 0;
+var protNumber = 0;
+var fatNumber = 0;
+var carbNumber = 0;
+
+for(var i=0; i< foods.length; i++) { %>
+
+<tr>
+	<td><%= foods[i].name %></td>
+	<td><%= foods[i].calories %></td>
+	<td><%= foods[i].protein %></td>
+	<td><%= foods[i].fat %></td>
+	<td><%= foods[i].carbs %></td>
+</tr>
+
+<% 
+calNumber = calNumber + foods[i].calories;
+protNumber = protNumber + foods[i].protein;
+fatNumber = fatNumber + foods[i].fat;
+carbNumber = carbNumber + foods[i].carbs;
+} %>
+
+<tr>
+	<td></td>
+	<td><%= calNumber %></td>
+	<td><%= protNumber %></td>
+	<td><%= fatNumber %></td>
+	<td><%= carbNumber %></td>
+</tr>
+</table>
+
+
+	<!-- Latest version of jQuery-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<!-- Latest BOOTSTRAP compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+
+</html>
