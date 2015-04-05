@@ -74,7 +74,7 @@ foodRoute.post(function(req,res) {
 });
 
 
-////////////// READING FOOD //////////////////
+////////////// READING ALL FOOD //////////////////
 
 // Create endpoint /api/beers for GET
 foodRoute.get(function(req, res) {
@@ -88,11 +88,39 @@ foodRoute.get(function(req, res) {
 });
 
 
+///////////// READING SINGLE FOOD WITH GET ////////////////
 
+//Enter in the food name in the URL
+//Create a new route with the /food/:food_id prefix
+var singleFoodRoute = router.route('/food/:food_name');
 
+//Create endpoint /food/:food_id for GET
+singleFoodRoute.get(function(req,res) {
+	//use the food model to find a specific food
+	//req.params retrieves the parameter in URL
+	Food.find({ name: req.params.food_name }, function(err, food) {
+		if(err)
+			res.send(err)
 
+		res.json(food);
+	});
+});
 
+////// READING SINGLE FOOD WITH POST ////////////////
 
+//Utilizes the search bar
+var foodSearchRoute = router.route('/search');
+
+foodSearchRoute.post(function(req,res) {
+
+	Food.find({ name: req.body.name }, function(err, food) {
+		if(err)
+			res.send(err)
+
+		res.json(food);
+	});
+
+});
 
 
 

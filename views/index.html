@@ -3,6 +3,7 @@
 	<head>
 		<!-- Latest BOOTSTRAP compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
 	</head>
 
 	<body style="background-image: url(assets/images/fruit.jpg);">
@@ -27,11 +28,24 @@
 	<p>Click on the submit button, and the input will be sent to a page on the server called "http://localhost:3002/food".</p>
 	</div>
 
+	<form class="navbar-form navbar-left" role="search" method="post" action="/search">
+  	<div class="form-group">
+    <input type="text" class="form-control" placeholder="Search" name="name">
+  	</div>
+  	<button type="submit" class="btn btn-default">Submit</button>
+	</form>
+
+	<br><br>
+    <a href="/food" class="btn btn-info" role="button">Show All</a>
+  
+
 	<div class="col-sm-4"></div>
 	</div>
 	</div>
 
 
+	<!-- Latest version of jQuery-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<!-- Latest BOOTSTRAP compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
