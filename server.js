@@ -71,13 +71,11 @@ foodRoute.post(function(req,res) {
 	food.carbs = req.body.carbs;
 
 	//save food and check for errors
-	food.save(function(err) {
+	food.save(function(err,food) {
 		if(err)
 			res.send(err);
 		
-		res.json({	message: 'Food added to the list',
-					data: food
-				});
+		res.render('confirm', {food:food});
 	});
 });
 
