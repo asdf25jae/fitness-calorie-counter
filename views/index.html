@@ -32,8 +32,16 @@
   	<div class="form-group">
     <input type="text" class="form-control" placeholder="Search" name="name">
   	</div>
-  	<button type="submit" class="btn btn-default">Submit</button>
+  	<button type="submit" class="btn btn-success">Search</button>
+  	<button type="submit" class="btn btn-danger" formmethod="post" formaction="/delete">Delete</button>
+
 	</form>
+
+	<form action="/deleteAll" method="post" target="_blank">
+	<button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete All</button>
+	</form>
+
+
 
 	<br><br>
     <a href="/food" class="btn btn-info" role="button">Show All</a>

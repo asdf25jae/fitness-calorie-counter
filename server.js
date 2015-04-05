@@ -122,11 +122,36 @@ foodSearchRoute.post(function(req,res) {
 
 });
 
+////////// REMOVING FOOD WITH DELETE ///////////////
+
+var foodDeleteRoute = router.route('/delete');
+
+foodDeleteRoute.post(function(req, res) {
+
+	Food.remove({ name: req.body.name }, function(err, food) {
+		if(err)
+			res.send(err);
+
+		res.json(food);
+	});
+});
+
+//////////////// DELETE ALL ///////////////////////////
+
+var deleteAllRoute = router.route('/deleteAll');
+
+deleteAllRoute.post(function(req, res) {
+
+	Food.remove({}, function(err) {
+		if(err)
+			res.send(err)
+
+		res.json({message: 'All food has been deleted'});
+	});
+});
 
 
-
-
-//register all routes
+//register all routes, can instead use app.get('/whatever', function(req, res) {});
 app.use(router);
 
 //start the server
