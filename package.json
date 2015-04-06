@@ -10,5 +10,9 @@
     "mongoose": "~3.8.24",
     "body-parser": "~1.12.0",
     "ejs": "~2.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hughnguy/fitness-calorie-counter"
   }
 }
