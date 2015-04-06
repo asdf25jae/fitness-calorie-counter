@@ -45,11 +45,6 @@ router.get('/',function(req,res) {
 	res.render('index');
 });
 
-router.get('/list',function(req,res) {
-	//creating route for /
-	res.render('list');
-});
-
 
 /************************* CRUD FUNCTIONS *************************/
 
