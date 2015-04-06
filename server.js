@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({
 	extended:true
 }));
 
-//static middleware that serves the public folder
+//make express look in the public directory for assets (css/js/img)
 app.use(express.static('./public'));
 
 
@@ -39,7 +39,7 @@ var port = process.env.PORT || 3002;
 var router = express.Router();
 
 
-//initial route for testing
+//set the home page route
 router.get('/',function(req,res) {
 	//creating route for /
 	res.render('index');
